@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import { useQuery } from '@apollo/client';
+import type { GetStaticProps } from 'next';
 
 import QUERY_COUNTRIES from './queryCountries.graphql';
+
+import { addApolloState, initializeApollo } from '../apollo';
 
 import styles from '../styles/Home.module.css';
 
@@ -31,3 +34,15 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const client = initializeApollo();
+
+  await client.query({
+    query: QUERY_COUNTRIES,
+  });
+
+  return addApolloState(client, {
+    props: {},
+  });
+};
