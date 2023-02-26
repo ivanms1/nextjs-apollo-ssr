@@ -1,0 +1,21 @@
+{
+  "name": "next-graphql-app",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.1",
+    "graphql": "^16.6.0",
+    "next": "12.3.1",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.11",
+    "@types/react": "^18.0.12",
+    "typescript": "^4.9.5"
+  }
+}
